@@ -1,0 +1,12 @@
+package gk.potoo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GkPotooApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(GkPotooApplication.class, args);
+	}
+}
