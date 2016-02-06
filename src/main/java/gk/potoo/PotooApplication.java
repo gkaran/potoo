@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GkPotooApplication {
+public class PotooApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GkPotooApplication.class, args);
+		SpringApplication.run(PotooApplication.class, args);
 	}
 }
