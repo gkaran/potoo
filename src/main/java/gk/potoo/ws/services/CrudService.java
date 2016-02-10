@@ -1,9 +1,11 @@
 package gk.potoo.ws.services;
 
-import com.google.common.collect.Lists;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
+import java.util.stream.StreamSupport;
+
+import static java.util.stream.Collectors.toList;
 
 abstract class CrudService<T> {
 
@@ -18,7 +20,7 @@ abstract class CrudService<T> {
     }
 
     public List<T> findAll() {
-        return Lists.newArrayList(repository.findAll());
+        return (List<T>) StreamSupport.stream(repository.findAll().spliterator(), false).collect(toList());
     }
 
     public void delete(String id) {

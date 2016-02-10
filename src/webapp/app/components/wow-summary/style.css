@@ -1,0 +1,15 @@
+.wow-summary {
+    width: 500px;
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.wow-summary p {
+    margin: 0;
+}
+
+.creator-name {
+    font-weight: bold;
+}
