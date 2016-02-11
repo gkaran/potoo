@@ -14,6 +14,7 @@ gradle-app.setting
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+/src/webapp/nodejs
 fabric.properties
 /src/webapp/dist
 /src/webapp/node_modules

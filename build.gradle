@@ -73,5 +73,5 @@ node {
 }
 
 task cleanWebApp(type: Delete) {
-	delete 'src/webapp/dist', 'src/webapp/node_modules'
+	delete 'src/webapp/dist', 'src/webapp/node_modules', 'src/webapp/nodejs'
 }
