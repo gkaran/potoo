@@ -14,10 +14,22 @@ buildscript {
 	}
 }
 
+plugins {
+	id "com.github.kt3k.coveralls" version "2.6.3"
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'com.moowork.node'
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
 
 jar {
 	baseName = 'potoo'
