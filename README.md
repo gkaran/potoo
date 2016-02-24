@@ -9,7 +9,7 @@ TBD
 
 ## Demo
 
-You can find a demo instance [here](polar-fjord-99350.herokuapp.com)
+You can find a demo instance [here](http://polar-fjord-99350.herokuapp.com)
 
 ## License
 
