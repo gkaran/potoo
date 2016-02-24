@@ -13,7 +13,7 @@ export class WowService {
 
 	getWows() {
 		return this.http.get(this._wowsUrl)
-			.map(res => <Wow[]> res.json())
+			.map(res => <Wow[]> res.json()._embedded.wows)
 			.catch(this.handleError);
 	}
 
