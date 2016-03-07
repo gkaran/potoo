@@ -46,7 +46,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.0')
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.6.3')
+	compile('joda-time:joda-time:2.9.2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

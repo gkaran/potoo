@@ -1,5 +1,8 @@
 package gk.potoo.documents;
 
+import org.joda.time.DateTime;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,14 +17,14 @@ public class Wow implements Serializable {
 
     private String text;
 
+    @CreatedBy
     private String creator;
 
     @Version
     private Long version;
 
-//    TODO: Fix this
-//    @CreatedDate
-//    private OffsetDateTime createdDate;
+    @CreatedDate
+    private DateTime createdDate;
 
     public String getText() {
         return text;
@@ -39,14 +42,6 @@ public class Wow implements Serializable {
         this.id = id;
     }
 
-//    public OffsetDateTime getCreatedDate() {
-//        return createdDate;
-//    }
-//
-//    public void setCreatedDate(OffsetDateTime createdDate) {
-//        this.createdDate = createdDate;
-//    }
-
     public String getCreator() {
         return creator;
     }
@@ -54,4 +49,13 @@ public class Wow implements Serializable {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    public DateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(DateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
 }
