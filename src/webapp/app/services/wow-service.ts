@@ -17,6 +17,12 @@ export class WowService {
 			.catch(this.handleError);
 	}
 
+	findByCreator(creator:string) {
+		return this.http.get(`${this._wowsUrl}/search/creator?creator=${creator}`)
+			.map(res => <Wow[]> res.json()._embedded.wows)
+			.catch(this.handleError);
+	}
+
 	private handleError(error:Response) {
 		// in a real world app, we may send the server to some remote logging infrastructure
 		// instead of just logging it to the console
