@@ -11,5 +11,8 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
+services:
+  - mongodb
+
 after_success:
   - ./gradlew jacocoTestReport coveralls
