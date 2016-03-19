@@ -15,7 +15,7 @@ gulp.task('compile', ['clean'], function () {
     return gulp
         .src('app/**/*.ts')
         .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(gulp.dest(outputDir));
+        .pipe(gulp.dest(outputDir  + '/app'));
 });
 
 // copy dependencies
@@ -30,7 +30,7 @@ gulp.task('copy:libs', ['clean'], function() {
             'node_modules/angular2/bundles/http.dev.js',
             'node_modules/angular2/bundles/router.dev.js'
         ])
-        .pipe(gulp.dest(outputDir))
+        .pipe(gulp.dest(outputDir  + '/lib'))
 });
 
 // copy static assets - i.e. non TypeScript compiled source
