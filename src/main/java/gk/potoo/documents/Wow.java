@@ -1,5 +1,7 @@
 package gk.potoo.documents;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,49 +15,27 @@ import java.io.Serializable;
 public class Wow implements Serializable {
 
     @Id
+    @Getter
+    @Setter
     private String id;
 
+    @Getter
+    @Setter
     private String text;
 
     @CreatedBy
+    @Getter
+    @Setter
     private String creator;
 
     @Version
+    @Getter
+    @Setter
     private Long version;
 
     @CreatedDate
+    @Getter
+    @Setter
     private DateTime createdDate;
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public DateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(DateTime createdDate) {
-        this.createdDate = createdDate;
-    }
 
 }
