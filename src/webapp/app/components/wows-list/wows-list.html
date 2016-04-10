@@ -1,0 +1,49 @@
+<div class="row">
+    <div *ngIf="includeCreateWow" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 wow">
+        <div class="row">
+            <div class="col-sm-2 hidden-xs">
+                <!-- Place photo here -->
+            </div>
+            <div class="col-xs-12 col-sm-10">
+
+                <form (submit)="createWow($event, wow.value)">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input type="text" #wow class="form-control" placeholder="What's happening">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <button type="submit" class="btn btn-primary">Wow!</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngFor="#wow of wows; #i=index" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 wow">
+        <div class="row">
+            <div class="col-sm-2 hidden-xs">
+                <!-- Place photo here -->
+            </div>
+            <div class="col-xs-12 col-sm-10">
+                <p>
+                    <span class="creator-name">{{wow.creator}}</span>
+                    <span class="wow-time-created">{{wow.createdDate}}</span>
+                </p>
+
+                <p class="wow-message">{{wow.text}}</p>
+
+            </div>
+        </div>
+    </div>
+</div>

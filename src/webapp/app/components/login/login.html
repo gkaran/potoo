@@ -1,0 +1,27 @@
+<form (submit)="login($event, identifier.value, password.value)">
+    <div *ngIf="loginError" class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-danger" role="alert">
+                {{loginError}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <input type="text" #identifier class="form-control" id="inputIdentifier" placeholder="Email or username">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group-xs">
+                <input type="password" #password class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>
+    </div>
+</form>

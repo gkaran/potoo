@@ -1,4 +1,4 @@
-package gk.potoo.config;
+package gk.potoo.config.security;
 
 import gk.potoo.documents.Account;
 import gk.potoo.repositories.AccountRepository;
@@ -22,7 +22,12 @@ public class AccountDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException("No such user '" + username + "'");
         }
-        return new User(username, account.getPassword(), AuthorityUtils.createAuthorityList(account.getRoles()));
+        return toUser(account);
     }
+
+    public User toUser(Account account) {
+        return new User(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList(account.getRoles()));
+    }
+
 
 }

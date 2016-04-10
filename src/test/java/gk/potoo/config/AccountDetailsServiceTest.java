@@ -1,5 +1,6 @@
 package gk.potoo.config;
 
+import gk.potoo.config.security.AccountDetailsService;
 import gk.potoo.documents.Account;
 import gk.potoo.repositories.AccountRepository;
 import org.junit.Before;
@@ -20,9 +21,11 @@ import static org.mockito.Mockito.when;
 
 public class AccountDetailsServiceTest {
 
-    private static final String USERNAME = "takis";
+    private static final String EMAIL = "test@test.test";
     private static final String PASSWORD = "123123";
     private static final String[] ROLES = {"ROLE_USER"};
+    private static final String FULLNAME = "John Doe";
+    private static final String USERNAME = "takis";
 
     @Mock
     private AccountRepository repository;
@@ -30,11 +33,12 @@ public class AccountDetailsServiceTest {
     @InjectMocks
     private AccountDetailsService accountDetailsService;
 
-    private Account account = new Account(USERNAME, PASSWORD, ROLES);
+    private Account account = new Account(EMAIL, FULLNAME, PASSWORD, ROLES);
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
+        account.setUsername(USERNAME);
         when(repository.findByUsername(USERNAME)).thenReturn(account);
     }
 

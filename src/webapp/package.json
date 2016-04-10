@@ -6,24 +6,31 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
-    "build": "gulp build"
+    "build": "gulp build",
+    "bsync": "gulp browser-sync"
   },
   "license": "ISC",
   "dependencies": {
-    "angular2": "2.0.0-beta.0",
-    "systemjs": "0.19.6",
+    "angular2": "2.0.0-beta.12",
+    "angular2-moment": "^0.4.3",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
+    "ng2-bootstrap": "^1.0.7",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.0",
+    "rxjs": "5.0.0-beta.3",
+    "systemjs": "0.19.6",
     "zone.js": "0.5.10"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
-    "lite-server": "^1.3.1",
-    "typescript": "^1.7.3",
+    "connect-modrewrite": "^0.9.0",
+    "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.8.0",
-    "del": "^2.1.0"
+    "http-proxy": "^1.13.2",
+    "lite-server": "^2.1.0",
+    "proxy-middleware": "^0.15.0",
+    "run-sequence": "^1.1.5",
+    "typescript": "^1.7.3"
   }
 }

@@ -28,8 +28,10 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 @WebAppConfiguration
 public class AccountControllerTest {
 
-    public static final String USERNAME = "John Doe";
-    public static final String PASSWORD = "123123";
+    private static final String EMAIL = "test@test.test";
+    private static final String USERNAME = "test";
+    private static final String PASSWORD = "123123";
+    private static final String FULLNAME = "John Doe";
 
     @Autowired
     private AccountRepository repository;
@@ -55,14 +57,14 @@ public class AccountControllerTest {
         mockMvc
             .perform(post("/api/accounts")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(JSONSerializerUtil.convertObjectToJsonBytes(new Account(USERNAME, PASSWORD))))
+                .content(JSONSerializerUtil.convertObjectToJsonBytes(new Account(EMAIL, FULLNAME, PASSWORD))))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("$.username").value(USERNAME))
+            .andExpect(jsonPath("$.email").value(EMAIL))
             .andExpect(jsonPath("$.roles").value("ROLE_USER"))
             .andExpect(jsonPath("$.id").isEmpty())
-            .andExpect(jsonPath("$.firstName").isEmpty())
-            .andExpect(jsonPath("$.lastName").isEmpty())
+            .andExpect(jsonPath("$.fullName").value(FULLNAME))
             .andExpect(jsonPath("$.version").isEmpty())
             .andExpect(jsonPath("$.createdDate").isEmpty())
             .andExpect(jsonPath("$.lastModifiedDate").isEmpty())

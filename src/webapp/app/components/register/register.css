@@ -1,0 +1,9 @@
+form {
+    margin-bottom: 0;
+}
+
+@media(max-width: 768px) {
+    .btn-block-xs {
+        width: 100%;
+    }
+}

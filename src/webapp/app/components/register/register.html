@@ -1,0 +1,16 @@
+<form (submit)="register($event, email.value, fullName.value, password.value)">
+    <div class="form-group">
+        <input type="text" #fullName class="form-control" id="inputFullName" placeholder="Full name">
+    </div>
+    <div class="form-group">
+        <input type="email" #email class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <input type="password" #password class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+
+    <div class="form-group text-right">
+        <button type="submit" class="btn btn-primary btn-block-xs">Sign up</button>
+    </div>
+</form>

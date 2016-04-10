@@ -1,0 +1,28 @@
+.wow:nth-of-type(1) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.wow:nth-last-of-type(1) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.wow {
+    background: #fff;
+    border-bottom: 1px solid #e1e8ed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wow p {
+    margin: 0;
+}
+
+.creator-name {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+}

@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class UsernameAuditorAwareTest {
 
-    public static final String USERNAME = "username";
+    private static final String USERNAME = "username";
     @Mock
     Authentication authentication;
 

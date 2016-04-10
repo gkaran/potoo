@@ -1,0 +1,27 @@
+.brand-image {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.navbar {
+    border-bottom: 0;
+}
+
+.navbar-nav {
+    height: 50px;
+}
+
+.navbar-nav > li > a {
+    height: 55px;
+    border-bottom: 5px solid #337ab7;
+    transition: all 200ms ease-in-out 0ms;
+}
+
+.navbar-nav > li {
+    height: 50px;
+    overflow: hidden;
+}
+
+.navbar-nav > li:hover > a {
+    height: 50px;
+}

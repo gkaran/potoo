@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedDate;
@@ -30,17 +31,19 @@ public class Account implements Serializable {
 
     @Getter
     @Setter
-    private String firstName;
+    private String fullName;
 
-    @Getter
-    @Setter
-    private String lastName;
-
-    @Indexed
-    @NotBlank
+    @Indexed(unique = true)
     @Getter
     @Setter
     private String username;
+
+    @Indexed(unique = true)
+    @NotBlank
+    @Getter
+    @Setter
+    @Email
+    private String email;
 
     @Getter
     @Setter
@@ -48,6 +51,7 @@ public class Account implements Serializable {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Getter
+    @Setter
     private String password;
 
     @Version
@@ -65,14 +69,16 @@ public class Account implements Serializable {
     @Setter
     private DateTime lastModifiedDate;
 
-    public Account(String username, String password, String... roles) {
-        this.username = username;
-        this.password = password;
+    public Account(String email, String fullName, String password, String... roles) {
+        this.email = email;
+        this.username = email.substring(0, email.indexOf("@"));
+        this.fullName = fullName;
+        this.password = encodePassword(password);
         this.roles = roles;
     }
 
-    public void setPassword(String password) {
-        this.password = PASSWORD_ENCODER.encode(password);
+    public String encodePassword(String password) {
+        return PASSWORD_ENCODER.encode(password);
     }
 
 }

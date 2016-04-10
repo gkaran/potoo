@@ -1,0 +1,18 @@
+.main-body {
+    color: white;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.login {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e1e8ed;
+}
